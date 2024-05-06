@@ -1,5 +1,6 @@
 describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:3000/fundamentals')
+  it('Contains Correct header text', () => {
+    cy.visit('/fundamentals')
+    cy.get('[data-test="fundamentals-header"]').should('contain.text', 'Testing Fundamentals')
   })
 })
