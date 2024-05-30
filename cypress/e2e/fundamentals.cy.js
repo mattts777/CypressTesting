@@ -1,9 +1,9 @@
 describe("Fundamentals test", () => {
-  it("Contains correct header text", () => {
+  beforeEach(() => {
     cy.visit("/fundamentals");
-    cy.get('[data-test="fundamentals-header"]').contains(
-      /Testing Fundamentals/i
-    );
+  });
+  it("Contains correct header text", () => {
+    cy.getDataTest("fundamentals-header").contains(/Testing Fundamentals/i);
   });
   it("Accordion works correctly", () => {
     cy.visit("/fundamentals");
