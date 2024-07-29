@@ -19,6 +19,13 @@ describe('Cypress With Forms', () => {
     cy.get('@subscribe-input').type('isacte@gmail.mx')
     cy.getDataTest('susbcribe-button').click()
     cy.contains(/Invalid email: isacte@gmail.mx/i).should('exist')
+  });
+  it('should  Step 1: Get form', () => {
+    cy.contains(/Testing Form/i)
+    cy.getDataTest('subscribe-form').find('input').as('subscribe-input')
+  });
 
+  it('should Step 2: Type Form', () => {
+    
   });
 })
