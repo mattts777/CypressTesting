@@ -24,4 +24,11 @@ describe('Some Example Tests', () =>{
         cy.location("pathname").should("equal", "/best-practices");
 
      })
+
+     it.only('Will Test intercepts', () => {
+        cy.getDataTest('post-button').click();
+        cy.intercept("POST", 'http://localhost:3000/examples', {
+            fixture: 'example.json'
+        })
+     })
 })
